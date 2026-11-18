@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitify — Build Better Habits</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">✳</span>
+                Habitify
+            </div>
+
+            <div class="menu-label">MENU</div>
+
+
+            <nav>
+                <a href="index.html" class="nav-item active">◈ Dashboard</a>
+                <a href="#habits" class="nav-item">▦ My Habits</a>
+                <a href="#weekly" class="nav-item">▥ Statistics</a>
+                <a href="suggestions.html" class="nav-item">✦ Daily Goals</a>
+            </nav>
+
+
+            <div class="sidebar-bottom">
+                <div class="profile">
+                    <div class="avatar">Y</div>
+                    <div>
+                        <strong>My Workspace</strong>
+                        <small>Personal account</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <span class="date" id="currentDate"></span>
+                    <h1>Good day, Achiever <span>✦</span></h1>
+                    <p>Small steps every day lead to big changes.</p>
+                </div>
+
+                <button class="add-btn" onclick="openModal()">
+                    + Add Habit
+                </button>
+            </header>
+
+            <!-- PROGRESS -->
+            <section class="progress-card">
+                <div>
+                    <span class="eyebrow">YOUR DAILY PROGRESS</span>
+                    <h2 id="progressPercent">0%</h2>
+                    <p id="progressText">Let's make today count!</p>
+                </div>
+
+                <div class="progress-circle">
+                    <div class="circle-inner">
+                        <span id="circlePercent">0%</span>
+                        <small>COMPLETED</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HABITS -->
+            <section class="habits-section" id="habits">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">YOUR ROUTINE</span>
+                        <h2>Today's Habits</h2>
+                    </div>
+                    <span class="habit-count" id="habitCount">0 habits</span>
+                </div>
+
+                <div id="habitList" class="habit-list"></div>
+            </section>
+
+            <!-- WEEKLY OVERVIEW -->
+
+            <!-- HABIT ANALYTICS -->
+            <section class="weekly-section" id="weekly">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">YOUR CONSISTENCY</span>
+                        <h2>Habit Analytics</h2>
+                    </div>
+
+                    <div class="view-switcher">
+                        <button class="view-btn active" onclick="changeView('weekly', this)">Weekly</button>
+                        <button class="view-btn" onclick="changeView('monthly', this)">Monthly</button>
+                        <button class="view-btn" onclick="changeView('annual', this)">Annual</button>
+                    </div>
+                </div>
+
+                <div class="analytics-summary">
+                    <div>
+                        <span class="eyebrow" id="analyticsLabel">LAST 7 DAYS</span>
+                        <h3 id="analyticsAverage">0%</h3>
+                        <p>Average completion</p>
+                    </div>
+                    <div class="analytics-icon">↗</div>
+                </div>
+
+                <div class="weekly-card" id="weeklyChart"></div>
+
+            </section>
+
+
+        </main>
+    </div>
+
+    <!-- ADD HABIT MODAL -->
+    <div class="modal-overlay" id="habitModal">
+        <div class="modal">
+            <button class="close-btn" onclick="closeModal()">×</button>
+
+            <span class="eyebrow">BUILD YOUR ROUTINE</span>
+            <h2>Create a new habit</h2>
+
+            <label for="habitName">Habit name</label>
+            <input id="habitName" type="text" placeholder="e.g. Read 20 pages">
+
+            <label for="habitCategory">Category</label>
+            <select id="habitCategory">
+                <option value="Personal">Personal</option>
+                <option value="Health">Health</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Learning">Learning</option>
+                <option value="Mindfulness">Mindfulness</option>
+            </select>
+
+            <button class="add-btn modal-submit" onclick="addHabit()">
+                Create Habit
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

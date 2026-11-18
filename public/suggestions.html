@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Goals — Habitify</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="suggestions.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="logo"><span class="logo-icon">✳</span> Habitify</div>
+
+            <div class="menu-label">MENU</div>
+
+            <nav>
+                <a href="index.html" class="nav-item">◈ Dashboard</a>
+                <a href="index.html#habits" class="nav-item">▦ My Habits</a>
+                <a href="index.html#weekly" class="nav-item">▥ Statistics</a>
+                <a href="suggestions.html" class="nav-item active">✦ Daily Goals</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="profile">
+                    <div class="avatar">Y</div>
+                    <div>
+                        <strong>My Workspace</strong>
+                        <small>Personal account</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <span class="date" id="suggestionDate"></span>
+                    <h1>Make today count. <span>✦</span></h1>
+                    <p>Small goals. Better routines. A stronger you.</p>
+                </div>
+                <a href="index.html" class="back-btn">← Dashboard</a>
+            </header>
+
+            <section class="inspiration-card">
+                <span class="eyebrow">TODAY'S INSPIRATION</span>
+                <h2>Become 1% better every day.</h2>
+                <p>You don't need a perfect day. Just a few intentional actions.</p>
+                <div class="inspiration-decoration">✳</div>
+            </section>
+
+
+            <section class="suggestion-section">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">MADE FOR YOUR ROUTINE</span>
+                        <h2>Recommended for You ✦</h2>
+                        <p class="recommendation-subtitle">
+                            Suggestions based on your current habits and progress.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="recommendation-grid" id="personalRecommendations"></div>
+            </section>
+
+
+            <section class="suggestion-section">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">DISCOVER YOUR NEXT HABIT</span>
+                        <h2>Daily Goal Suggestions</h2>
+                    </div>
+                </div>
+
+                <div class="category-filter">
+                    <button class="filter-btn active" onclick="filterGoals('All',this)">All</button>
+                    <button class="filter-btn" onclick="filterGoals('Health',this)">Health</button>
+                    <button class="filter-btn" onclick="filterGoals('Fitness',this)">Fitness</button>
+                    <button class="filter-btn" onclick="filterGoals('Learning',this)">Learning</button>
+                    <button class="filter-btn" onclick="filterGoals('Productivity',this)">Productivity</button>
+                    <button class="filter-btn" onclick="filterGoals('Mindfulness',this)">Mindfulness</button>
+                </div>
+
+                <div class="suggestion-grid" id="suggestionGrid"></div>
+            </section>
+
+            <section class="custom-goal">
+                <div>
+                    <span class="eyebrow">YOUR OWN IDEA</span>
+                    <h2>Have a goal in mind?</h2>
+                    <p>Create a personal goal and add it to your routine.</p>
+                </div>
+                <button class="add-btn" onclick="openCustomGoal()">+ Create Goal</button>
+            </section>
+
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="goalModal">
+        <div class="modal">
+            <button class="close-btn" onclick="closeCustomGoal()">×</button>
+            <span class="eyebrow">PERSONAL GOAL</span>
+            <h2>Create your goal</h2>
+
+            <label for="customName">Goal name</label>
+            <input id="customName" type="text" placeholder="e.g. Practice coding">
+
+            <label for="customCategory">Category</label>
+            <select id="customCategory">
+                <option>Personal</option>
+                <option>Health</option>
+                <option>Fitness</option>
+                <option>Learning</option>
+                <option>Productivity</option>
+                <option>Mindfulness</option>
+            </select>
+
+            <button class="add-btn modal-submit" onclick="createCustomGoal()">Add to My Habits</button>
+        </div>
+    </div>
+
+    <script src="suggestions.js"></script>
+</body>
+
+</html>

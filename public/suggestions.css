@@ -1,0 +1,227 @@
+/* DAILY GOALS PAGE */
+
+.back-btn {
+  text-decoration: none;
+  color: var(--lime);
+  border: 1px solid var(--border);
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.inspiration-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(110deg, #253a23, #111a13);
+  border: 1px solid #425b38;
+  padding: 35px;
+  border-radius: 20px;
+  margin-bottom: 45px;
+}
+
+.inspiration-card h2 {
+  font-size: clamp(25px, 4vw, 38px);
+  margin: 15px 0;
+  max-width: 500px;
+}
+
+.inspiration-card p {
+  color: #aab7a6;
+  font-size: 14px;
+}
+
+.inspiration-decoration {
+  position: absolute;
+  right: 45px;
+  top: -35px;
+  color: #c5ff6320;
+  font-size: 180px;
+}
+
+.category-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  background: #141a15;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 10px 17px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--lime);
+  color: #10150c;
+  border-color: var(--lime);
+  font-weight: 700;
+}
+
+.suggestion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.goal-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 23px;
+  border-radius: 16px;
+  transition: 0.25s;
+  animation: appear 0.35s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-5px);
+  border-color: #708c4f;
+}
+
+.goal-icon {
+  font-size: 27px;
+  margin-bottom: 17px;
+}
+
+.goal-card h3 {
+  font-size: 17px;
+  margin-bottom: 9px;
+}
+
+.goal-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  min-height: 42px;
+}
+
+.goal-tag {
+  display: inline-block;
+  color: var(--lime);
+  background: #263221;
+  padding: 6px 9px;
+  border-radius: 6px;
+  font-size: 10px;
+  margin: 15px 0;
+}
+
+.goal-add {
+  display: block;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #526044;
+  color: var(--lime);
+  background: transparent;
+  border-radius: 9px;
+  transition: 0.2s;
+}
+
+.goal-add:hover {
+  background: var(--lime);
+  color: #10150c;
+}
+
+.goal-add.added {
+  background: #253b23;
+  border-color: #668b45;
+  color: var(--lime);
+}
+
+.custom-goal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 25px;
+  border-radius: 16px;
+  margin-top: 40px;
+}
+
+.custom-goal h2 {
+  margin: 10px 0;
+}
+
+.custom-goal p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 1050px) {
+  .suggestion-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .suggestion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-goal {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .inspiration-decoration {
+    right: 5px;
+    font-size: 110px;
+  }
+}
+
+/* PERSONALIZED RECOMMENDATIONS */
+
+.recommendation-subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0 45px;
+}
+
+.recommendation-card {
+  background: linear-gradient(145deg, #1c291c, #121713);
+  border: 1px solid #354532;
+  border-radius: 15px;
+  padding: 23px;
+  animation: appear 0.4s ease;
+}
+
+.recommendation-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.recommendation-card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.recommendation-card p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+  .recommendation-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+}
